@@ -1,6 +1,33 @@
-<h1 class="text-3xl">Cart Section</h1>
+<h1 class="text-3xl text-white text-center">Cart Section</h1>
 
 
-<span class="text-xl text-white">
-  {{cartItems$ | async | json}}
-</span>
+<!--<span class="text-xl text-white">-->
+<!--  {{cartItems$ | async | json}}-->
+<!--</span>-->
+<div class="w-full flex flex-row justify-center gap-12 flex-wrap">
+
+  @for (item of cartItems$ | async; track item.id) {
+    <div
+      class="w-full max-w-sm bg-white border  text-black border-gray-200 rounded-lg shadow-sm min-h-[400px]">
+      <div class="h-[300px] flex flex-col text-center justify-center">
+        <a>
+          <img class="p-8 rounded-t-lg block mx-auto" width="200" [src]="item.image" alt="product image"/>
+        </a>
+      </div>
+
+      <div class="px-5 pb-5 flex flex-col gap-4">
+        <a>
+          <h5 class="text-lg font-semibold tracking-tight text-gray-900">
+            {{ item.title }}
+          </h5>
+        </a>
+        <p class="text-xs text-gray-800">
+          {{item.description.substring(0,50)}}...
+        </p>
+        <div>
+          <span class="text-xl font-bold text-gray-900">${{ item.price }}</span>
+        </div>
+      </div>
+    </div>
+  }
+</div>
