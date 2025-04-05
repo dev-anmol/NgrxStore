@@ -1,0 +1,32 @@
+<div class="bg-gray-800 flex flex-center justify-center items-center">
+  <div class="text-center mt-10">
+    <div class="mb-4">
+      <h1 class="text-2xl font-bold text-gray-100">Counter App</h1>
+    </div>
+    <div id="counter" class="text-4xl font-bold text-blue-500 mb-4">
+      {{count$ | async}}
+    </div>
+    <div class="flex justify-center space-x-4">
+      <button id="increment"
+        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        (click)="increment()"
+      >
+        Increment
+      </button>
+
+      <button id="decrement"
+              class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+        (click)="decrement()"
+      >
+        Increment
+      </button>
+      <button id="reset"
+              class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
+        (click)="reset()"
+      >
+        Reset
+      </button>
+    </div>
+  </div>
+
+</div>
